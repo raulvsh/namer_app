@@ -35,10 +35,19 @@ class MyHomePage extends StatelessWidget {
     var appState = context.watch<MyAppState>();
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Mi app de nombres'),
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+      ),
       body: Column(
         children: [
-          Text('A random idea:'),
+          Text('Una idea aleatoria:'),
           Text(appState.current.asLowerCase),
+          ElevatedButton(
+              onPressed: () {
+                print('botón presionado');
+              },
+              child: Text('siguiente'))
         ],
       ),
     );
